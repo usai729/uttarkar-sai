@@ -4,27 +4,6 @@ import Home from "./Pages/Home";
 import { Helmet } from "react-helmet";
 
 function App() {
-	const ComingSoon = () => {
-		return (
-			<div class="min-h-screen bg-c1 flex flex-col items-center justify-center">
-				<h1 class="text-5xl text-white font-bold mb-8 animate-pulse">
-					<Helmet>
-						<title>Coming soon - Uttarkar Sai Nath Rao</title>
-					</Helmet>
-				</h1>
-				<p class="text-white text-lg mb-8">
-					It'll be up soon, until then let's go{" "}
-					<Link
-						to={"/"}
-						className="text-blue-400"
-					>
-						Home?
-					</Link>
-				</p>
-			</div>
-		);
-	};
-
 	const Page404 = () => {
 		return (
 			<div class="min-h-screen bg-c1 flex flex-col items-center justify-center">
@@ -54,10 +33,6 @@ function App() {
 				<Route
 					path="/"
 					element={<Home />}
-				/>
-				<Route
-					path="/blog"
-					element={<ComingSoon />}
 				/>
 
 				<Route
