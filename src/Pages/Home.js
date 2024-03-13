@@ -114,7 +114,7 @@ export default function Home() {
 			points: [
 				"JWT for login and signup",
 				"Forgot and reset passwords via email",
-				"Originally build as an assignment",
+				"Originally built as an assignment",
 			],
 			link: "https://github.com/usai729/atg",
 		},
