@@ -20,6 +20,8 @@ import api from "../Assets/api.jpeg";
 import auth from "../Assets/auth.png";
 import compvision from "../Assets/compvision.jpg";
 import auction from "../Assets/auction.jpg";
+import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 	const skills = [
@@ -120,6 +122,34 @@ export default function Home() {
 
 	return (
 		<div className="overflow-hidden">
+			<Helmet>
+				<title>Uttarkar Sai Nath Rao</title>
+				<meta
+					name="description"
+					content="Full-stack developer with a product vision, weaving user experiences with MERN magic. Mastering the web (HTML, CSS, JS, React, PHP) while exploring marketing strategies to fuel engagement. Keen eye for detail, analytical mind, and collaborative spirit bridge the gap between tech and business. Seeking opportunities to build impactful products and collaborate with awesome teams!"
+				/>
+				<meta
+					name="keywords"
+					content="portfolio, programmer, JavaScript, PHP, MySQL, MongoDB, Python, API, backend, frontend, RESTful, REST, web development, software engineering, coding, HTML, CSS, React, Node.js, Express.js, Firebase, software developer, full-stack developer, technology enthusiast, coding projects, software projects, programming languages, web developer in Hyderabad, India"
+				/>
+				<meta
+					name="author"
+					content="Uttarkar Sai Nath Rao"
+				/>
+				<meta
+					name="viewport"
+					content="width=device-width"
+				/>
+				<meta
+					property="og:title"
+					content="Uttarkar Sai Nath Rao - Full-stack Developer"
+				/>
+				<meta
+					property="og:description"
+					content="Passionate full-stack developer based in Hyderabad, India, skilled in JavaScript, React, Node.js, and more. Seeking opportunities to collaborate on impactful projects."
+				/>
+			</Helmet>
+
 			<Nav />
 			<div className="h-[70vh] p-10 flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black">
 				<div className="flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[15vw] text-white">
@@ -134,32 +164,6 @@ export default function Home() {
 						An avid Programmer based in the vibrant city of
 						Hyderabad, India!
 					</p>
-					<ul className="flex items-center justify-center mt-10 gap-7 list-none md:hidden w-full">
-						<li>
-							<a
-								href="https://www.github.com/usai729"
-								target="_blank"
-							>
-								<FaGithub size={20} />
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://www.linkedin.com/in/saiuttarkar"
-								target="_blank"
-							>
-								<FaLinkedinIn size={20} />
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://www.instagram.com/sai_uttarkar"
-								target="_blank"
-							>
-								<FaInstagram size={20} />
-							</a>
-						</li>
-					</ul>
 					<div className="w-full">
 						<a
 							href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
@@ -169,6 +173,43 @@ export default function Home() {
 							<FaPaperclip /> My Resume
 						</a>
 					</div>
+					<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
+						<li>
+							<a
+								href="https://www.github.com/usai729"
+								target="_blank"
+								className="md:hidden"
+							>
+								<FaGithub size={20} />
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://www.linkedin.com/in/saiuttarkar"
+								target="_blank"
+								className="md:hidden"
+							>
+								<FaLinkedinIn size={20} />
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://www.instagram.com/sai_uttarkar"
+								target="_blank"
+								className="md:hidden"
+							>
+								<FaInstagram size={20} />
+							</a>
+						</li>
+						{/* <li>
+							<Link
+								to={"/blog"}
+								className="md:hidden"
+							>
+								Blog
+							</Link>
+						</li> */}
+					</ul>
 				</div>
 			</div>
 			<Line />
@@ -209,7 +250,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="p-10 flex flex-col gap-4 justify-center h-[70vh] items-center bg-gradient-to-tr from-gray-900 to-black text-white mt-5">
+			<div className="p-10 flex flex-col gap-4 justify-center h-[70vh] items-center bg-gradient-to-tr from-gray-900 to-black text-white mt-5 rounded-t-lg">
 				<div className="flex flex-col md:flex-row gap-2 w-screen md:w-[40vw] p-10 md:p-0">
 					<div>
 						<p className="text-lg font-semibold font-poppins text-beech">
@@ -226,17 +267,17 @@ export default function Home() {
 							and collaborate with awesome teams!
 						</p>
 					</div>
-					{/* <div
+					<div
 						className="github-card"
 						data-github="usai729"
 						data-width="400"
 						data-height=""
 						data-theme="default"
-					></div> */}
+					></div>
 				</div>
 				<div className="flex flex-col w-full md:flex-row justify-center items-center gap-2">
 					<button
-						className="flex items-center justify-center p-4 bg-c1 rounded-md gap-2 text-beech cursor-not-allowed w-full md:w-max"
+						className="flex items-center justify-center p-4 bg-c1 rounded-md gap-2 text-beech cursor-not-allowed w-full md:w-max opacity-50"
 						disabled
 					>
 						<MdConnectWithoutContact size={25} />
@@ -249,9 +290,12 @@ export default function Home() {
 						disabled
 					>
 						<FaGithub size={25} />
-						Code to{" "}
-						<span className=" text-blue-900">
-							this<span className="text-purple-400">.site</span>
+						<span>
+							Code to{" "}
+							<span className=" text-blue-900">
+								this
+								<span className="text-purple-400">.site</span>
+							</span>
 						</span>
 					</a>
 				</div>
@@ -296,7 +340,7 @@ const SkillContainer = ({ category, skills }) => (
 );
 
 const Project = ({ title, link, points, image }) => (
-	<div className="flex flex-col justify-between gap-1 rounded-md w-[98vw] md:w-[27vw] xl:w-[17vw] min-h-[55vh] font-poppins border-1 border-gray-200 overflow-hidden">
+	<div className="flex flex-col justify-between gap-1 rounded-md w-[98vw] md:w-[27vw] xl:w-[17vw] min-h-[40vh] md:min-h-[55vh] font-poppins border-1 border-gray-200 overflow-hidden bg-white">
 		<div>
 			<img
 				src={image}
@@ -329,4 +373,3 @@ const Line = () => {
 		<div className="p-1 bg-gradient-to-r from-purple-700 via-blue-400 to-purple-700 w-screen h-4"></div>
 	);
 };
-// 14131A
