@@ -219,7 +219,7 @@ export default function Home() {
 					<h3 className="text-gray-900 text-xl font-bold mb-5">
 						Skills
 					</h3>
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 place-items-center">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-5 place-items-center">
 						{skills.map((skillCategory, index) => (
 							<SkillContainer
 								key={index}
