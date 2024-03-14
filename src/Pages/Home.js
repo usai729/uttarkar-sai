@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
 	FaDatabase,
 	FaGithub,
@@ -22,8 +22,18 @@ import compvision from "../Assets/compvision.jpg";
 import auction from "../Assets/auction.jpg";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { useIsIntersect } from "../Utils/useIsIntersect";
 
 export default function Home() {
+	const skillsRef = useRef();
+	const skillsIntersect = useIsIntersect(skillsRef);
+
+	const projectsRef = useRef();
+	const projectsIntersect = useIsIntersect(projectsRef);
+
+	const aboutsRef = useRef();
+	const aboutsIntersect = useIsIntersect(aboutsRef);
+
 	const skills = [
 		{
 			category: "Frontend",
@@ -152,69 +162,68 @@ export default function Home() {
 
 			<Nav />
 			<div className="h-[70vh] p-10 flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black">
-				<div className="flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[15vw] text-white">
-					<p
-						className="text-lg font-bold font-press-start w-full text-left"
-						id="name"
-					>
-						Uttarkar Sai Nath Rao
-						<span className="cursor">|</span>
-					</p>
-					<p className=" font-poppins w-full text-right">
-						An avid Programmer based in the vibrant city of
-						Hyderabad, India!
-					</p>
-					<div className="w-full">
-						<a
-							href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
-							target="_blank"
-							className="flex items-center gap-1 text-xs text-left cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-start font-semibold"
+				<div className="flex justify-evenly items-center w-full">
+					<div className="flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[45vw] lg:max-w-[35vw] xl:max-w-[30vw] text-white">
+						<p
+							className="text-lg font-bold font-press-start w-full text-left"
+							id="name"
 						>
-							<FaPaperclip /> My Resume
-						</a>
+							Uttarkar Sai Nath Rao
+							<span className="cursor">|</span>
+						</p>
+						<p className=" font-poppins w-full text-right">
+							An avid Programmer based in the vibrant city of
+							Hyderabad, India!
+						</p>
+						<div className="w-full">
+							<a
+								href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
+								target="_blank"
+								className="flex items-center gap-1 text-xs text-left cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-start font-semibold"
+							>
+								<FaPaperclip /> My Resume
+							</a>
+						</div>
+						<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
+							<li>
+								<a
+									href="https://www.github.com/usai729"
+									target="_blank"
+									className="md:hidden"
+								>
+									<FaGithub size={20} />
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/saiuttarkar"
+									target="_blank"
+									className="md:hidden"
+								>
+									<FaLinkedinIn size={20} />
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.instagram.com/sai_uttarkar"
+									target="_blank"
+									className="md:hidden"
+								>
+									<FaInstagram size={20} />
+								</a>
+							</li>
+						</ul>
 					</div>
-					<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
-						<li>
-							<a
-								href="https://www.github.com/usai729"
-								target="_blank"
-								className="md:hidden"
-							>
-								<FaGithub size={20} />
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://www.linkedin.com/in/saiuttarkar"
-								target="_blank"
-								className="md:hidden"
-							>
-								<FaLinkedinIn size={20} />
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://www.instagram.com/sai_uttarkar"
-								target="_blank"
-								className="md:hidden"
-							>
-								<FaInstagram size={20} />
-							</a>
-						</li>
-						{/* <li>
-							<Link
-								to={"/blog"}
-								className="md:hidden"
-							>
-								Blog
-							</Link>
-						</li> */}
-					</ul>
 				</div>
 			</div>
 			<Line />
 
-			<div className="mt-5 grid place-items-center">
+			<div
+				ref={skillsRef}
+				className={`mt-5 grid place-items-center transition-opacity duration-700 ease-in ${
+					skillsIntersect ? "opacity-100" : "opacity-0"
+				}`}
+			>
 				<div className="skills mt-5 p-2">
 					<h3 className="text-gray-900 text-xl font-bold mb-5">
 						Skills
@@ -230,8 +239,13 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="mt-5 grid place-items-center">
-				<div className="skills mt-5 p-2">
+			<div className={`mt-5 grid place-items-center`}>
+				<div
+					ref={projectsRef}
+					className={`skills mt-5 p-2 transition-opacity duration-700 ease-in ${
+						projectsIntersect ? "opacity-100" : "opacity-0"
+					}`}
+				>
 					<h3 className="text-gray-900 text-xl font-bold mb-5">
 						Projects
 					</h3>
@@ -250,8 +264,15 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="p-10 flex flex-col gap-4 justify-center h-[70vh] items-center bg-gradient-to-tr from-gray-900 to-black text-white mt-5 rounded-t-lg">
-				<div className="flex flex-col md:flex-row gap-2 w-screen md:w-[40vw] p-10 md:p-0">
+			<div
+				className={`p-10 flex flex-col gap-4 justify-center h-[70vh] items-center bg-gradient-to-tr from-gray-900 to-black text-white mt-5 rounded-t-lg`}
+			>
+				<div
+					ref={aboutsRef}
+					className={`flex flex-col md:flex-row gap-2 w-screen md:w-[40vw] p-10 md:p-0 transition-opacity duration-700 ease-in ${
+						aboutsIntersect ? "opacity-100" : "opacity-0"
+					}`}
+				>
 					<div>
 						<p className="text-lg font-semibold font-poppins text-beech">
 							About me...

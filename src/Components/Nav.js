@@ -4,7 +4,7 @@ import logo from "../Assets/logo.jpeg";
 
 export default function Nav() {
 	return (
-		<div className="w-screen shadow-lg flex justify-between items-center p-5 md:pr-14 md:pl-14 z-50 border-b-1 border-gray-300 sticky top-0 bg-white">
+		<div className="w-screen flex justify-between items-center p-5 md:pr-14 md:pl-14 z-50 border-b-1 border-gray-300 sticky top-0 bg-white">
 			<img
 				src={logo}
 				alt="Sai"
