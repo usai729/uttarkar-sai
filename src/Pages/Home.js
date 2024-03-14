@@ -126,7 +126,7 @@ export default function Home() {
 				"Forgot and reset passwords via email",
 				"Originally built as an assignment",
 			],
-			link: "https://github.com/usai729/atg",
+			link: "https://github.com/usai729/authentication-api",
 		},
 	];
 
