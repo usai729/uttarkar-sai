@@ -405,7 +405,7 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="hidden md:flex p-10 md:w-[40em] lg:w-[55em] flex-wrap gap-3 items-center text-gray-400">
+					<div className="hidden md:flex p-10 md:w-[40em] lg:w-[65em] flex-wrap gap-3 items-center text-gray-400 opacity-75">
 						{tagData.map((tag, index) => (
 							<div
 								key={index}
