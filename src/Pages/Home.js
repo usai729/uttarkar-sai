@@ -14,6 +14,20 @@ import { TbCloudCode } from "react-icons/tb";
 import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 import { MdConnectWithoutContact, MdOpenInNew } from "react-icons/md";
 import { FcSettings } from "react-icons/fc";
+import { FaServer, FaPalette, FaHandsHelping } from "react-icons/fa";
+import { RiReactjsLine } from "react-icons/ri";
+import {
+	SiTailwindcss,
+	SiBootstrap,
+	SiMongodb,
+	SiMysql,
+	SiFirebase,
+	SiPhp,
+	SiPython,
+	SiJavascript,
+	SiHtml5,
+	SiNodedotjs,
+} from "react-icons/si";
 
 import Nav from "../Components/Nav";
 import "../Home.css";
@@ -144,6 +158,46 @@ export default function Home() {
 		},
 	];
 
+	const tagData = [
+		{ name: "Backend Development", icon: FaServer, color: "lightblue" },
+		{ name: "APIs", icon: FaCode, color: "lightpurple" },
+		{ name: "REST", icon: FaHandsHelping, color: "lightgreen" },
+		{ name: "Frontend Development", icon: FaPalette, color: "lightorange" },
+		{ name: "HTML&CSS", icon: SiHtml5, color: "red" },
+		{ name: "React JS", icon: RiReactjsLine, color: "lightblue" },
+		{ name: "Tailwind", icon: SiTailwindcss, color: "lightpurple" },
+		{ name: "Bootstrap", icon: SiBootstrap, color: "lightgreen" },
+		{ name: "Node.js", icon: SiNodedotjs, color: "lightorange" },
+		{ name: "Express.js", icon: SiNodedotjs, color: "red" },
+		{ name: "PHP", icon: SiPhp, color: "lightblue" },
+		{ name: "Python", icon: SiPython, color: "lightpurple" },
+		{ name: "Firebase", icon: SiFirebase, color: "lightgreen" },
+		{ name: "RESTful APIs", icon: FaHandsHelping, color: "lightorange" },
+		{ name: "MongoDB", icon: SiMongodb, color: "red" },
+		{ name: "MySQL", icon: SiMysql, color: "lightblue" },
+		{ name: "C/C++", icon: FaCode, color: "lightpurple" },
+		{ name: "Communication", icon: FaHandsHelping, color: "lightgreen" },
+		{ name: "DSA", icon: FaCode, color: "lightorange" },
+		{ name: "Full-stack Development", icon: FaServer, color: "red" },
+		{ name: "MERN Stack", icon: FaServer, color: "lightblue" },
+		{ name: "Product Vision", icon: FaPalette, color: "lightpurple" },
+		{ name: "User Experience", icon: FaPalette, color: "lightgreen" },
+		{
+			name: "Marketing Strategies",
+			icon: FaHandsHelping,
+			color: "lightorange",
+		},
+		{ name: "Engagement", icon: FaHandsHelping, color: "red" },
+		{ name: "Analytical Thinking", icon: FaCode, color: "lightblue" },
+		{ name: "Collaboration", icon: FaHandsHelping, color: "lightpurple" },
+		{ name: "Impactful Products", icon: FaServer, color: "lightgreen" },
+		{
+			name: "Team Collaboration",
+			icon: FaHandsHelping,
+			color: "lightorange",
+		},
+	];
+
 	const handleScroll = (event) => {
 		event.preventDefault();
 
@@ -178,7 +232,7 @@ export default function Home() {
 				/>
 				<meta
 					name="keywords"
-					content="portfolio, programmer, JavaScript, PHP, MySQL, MongoDB, Python, API, backend, frontend, RESTful, REST, web development, software engineering, coding, HTML, CSS, React, Node.js, Express.js, Firebase, software developer, full-stack developer, technology enthusiast, coding projects, software projects, programming languages, web developer in Hyderabad, India"
+					content="portfolio, programmer, JavaScript, PHP, MySQL, MongoDB, Python, API, backend, frontend, RESTful, REST, web development, software engineering, coding, HTML, CSS, React, Node.js, Express.js, Firebase, software developer, full-stack developer, technology enthusiast, coding projects, software projects, programming languages, web developer in Hyderabad, India, Backend Development, APIs, REST, Frontend Development, HTML&CSS, React JS, Tailwind, Bootstrap, Node.js, Express.js, PHP, Python, Firebase, RESTful APIs, MongoDB, MySQL, C/C++, Communication, DSA, Full-stack Development, MERN Stack, Product Vision, User Experience, Marketing Strategies, Engagement, Analytical Thinking, Collaboration, Impactful Products, Team Collaboration"
 				/>
 				<meta
 					name="author"
@@ -201,7 +255,7 @@ export default function Home() {
 			<Nav />
 			<div className="flex justify-between p-0 md:p-10 gap-10">
 				<div
-					className="h-[70vh] w-[20em] hidden md:flex p-7 justify-center items-center bg-lightgray text-powderBlue font-poppins rounded-lg shadow-xl"
+					className="h-[73vh] w-[20em] hidden md:flex p-7 justify-center items-center bg-lightgray text-powderBlue font-poppins rounded-lg shadow-xl"
 					id="top"
 				>
 					<div className="flex flex-col justify-around items-start text-md w-full h-full">
@@ -269,85 +323,99 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div
-					className="h-[70vh] w-full p-10 flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black rounded-lg shadow-xl"
-					id="top"
-				>
-					<div className="flex justify-evenly items-center w-full">
-						<div className="flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[45vw] lg:max-w-[35vw] xl:max-w-[30vw] text-white">
-							<p
-								className="text-lg font-bold font-press-start w-full text-left"
-								id="name"
-							>
-								Uttarkar Sai Nath Rao
-								<span className="cursor">|</span>
-							</p>
-							<p className=" font-poppins w-full text-right">
-								An avid Programmer based in the vibrant city of
-								Hyderabad, India!
-							</p>
-							<div className="w-full">
-								<a
-									href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
-									target="_blank"
-									className="flex items-center gap-1 text-xs text-left cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-start font-semibold"
+				<div className="flex flex-col gap-5 w-full items-center justify-evenly">
+					<div
+						className="h-[70vh] md:h-[15em] w-full p-10 flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black rounded-lg shadow-xl"
+						id="top"
+					>
+						<div className="flex justify-evenly items-center w-full h-full">
+							<div className="h-full flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[45vw] lg:max-w-[35vw] xl:max-w-[30vw] text-white">
+								<p
+									className="text-lg font-bold font-press-start w-full text-left"
+									id="name"
 								>
-									<FaPaperclip /> My Resume
-								</a>
-							</div>
-							<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
-								<li>
+									Uttarkar Sai Nath Rao
+									<span className="cursor">|</span>
+								</p>
+								<p className=" font-poppins w-full text-right">
+									An avid Programmer based in the vibrant city
+									of Hyderabad, India!
+								</p>
+								<div className="w-full">
 									<a
-										href="https://www.github.com/usai729"
+										href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
 										target="_blank"
-										className="md:hidden"
+										className="flex items-center gap-1 text-xs text-left cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-start font-semibold"
 									>
-										<FaGithub size={20} />
+										<FaPaperclip /> My Resume
 									</a>
-								</li>
-								<li>
+								</div>
+								<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
+									<li>
+										<a
+											href="https://www.github.com/usai729"
+											target="_blank"
+											className="md:hidden"
+										>
+											<FaGithub size={20} />
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.linkedin.com/in/saiuttarkar"
+											target="_blank"
+											className="md:hidden"
+										>
+											<FaLinkedinIn size={20} />
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.instagram.com/sai_uttarkar"
+											target="_blank"
+											className="md:hidden"
+										>
+											<FaInstagram size={20} />
+										</a>
+									</li>
+								</ul>
+								<div className="flex md:hidden w-full justify-around mt-7">
 									<a
-										href="https://www.linkedin.com/in/saiuttarkar"
-										target="_blank"
-										className="md:hidden"
+										href="#skills"
+										className="text-powderBlue"
+										onClick={handleScroll}
 									>
-										<FaLinkedinIn size={20} />
+										Skills
 									</a>
-								</li>
-								<li>
 									<a
-										href="https://www.instagram.com/sai_uttarkar"
-										target="_blank"
-										className="md:hidden"
+										href="#projects"
+										className="text-powderBlue"
+										onClick={handleScroll}
 									>
-										<FaInstagram size={20} />
+										Projects
 									</a>
-								</li>
-							</ul>
-							<div className="flex md:hidden w-full justify-around mt-7">
-								<a
-									href="#skills"
-									className="text-powderBlue"
-									onClick={handleScroll}
-								>
-									Skills
-								</a>
-								<a
-									href="#projects"
-									className="text-powderBlue"
-									onClick={handleScroll}
-								>
-									Projects
-								</a>
-								<a
-									href="#about"
-									className="text-powderBlue"
-									onClick={handleScroll}
-								>
-									About me
-								</a>
+									<a
+										href="#about"
+										className="text-powderBlue"
+										onClick={handleScroll}
+									>
+										About me
+									</a>
+								</div>
 							</div>
 						</div>
+					</div>
+					<div className="hidden md:flex p-10 md:w-[40em] lg:w-[55em] flex-wrap gap-3 items-center text-gray-400">
+						{tagData.map((tag, index) => (
+							<div
+								key={index}
+								className={`p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1`}
+								style={{ borderColor: `${tag.color}` }}
+							>
+								<tag.icon />
+								<span>{tag.name}</span>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
@@ -403,7 +471,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div
-				className={`p-10 flex flex-col gap-4 justify-center h-[70vh] items-center bg-gradient-to-tr from-gray-900 to-black text-white mt-5 rounded-t-lg`}
+				className={`p-10 flex flex-col gap-4 justify-center h-[85vh] items-center bg-gradient-to-tr from-gray-900 to-black text-white mt-5 rounded-t-lg`}
 			>
 				<div
 					ref={aboutsRef}

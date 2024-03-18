@@ -22,6 +22,9 @@ module.exports = {
 				btnBlue: "#BB87FD",
 				powderBlue: "#99B2DD",
 			},
+			boxShadow: {
+				sha1: "rgba(255, 255, 255, 0.2) 0px 3px 8px",
+			},
 		},
 	},
 	plugins: [require("tailwind-scrollbar")],

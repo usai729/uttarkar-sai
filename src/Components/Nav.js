@@ -1,11 +1,10 @@
 import React from "react";
-import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import logo from "../Assets/logo.jpeg";
-import { MdConnectWithoutContact } from "react-icons/md";
 
 export default function Nav() {
 	return (
-		<div className="w-screen flex justify-between items-center p-5 md:pr-14 md:pl-14 z-50 border-b-1 border-gray-300 sticky top-0 bg-white">
+		<div className="w-screen flex justify-between items-center p-5 md:pr-14 md:pl-14 z-50 border-b-1 border-gray-300 sticky top-0 bg-white shadow-sha1">
 			<img
 				src={logo}
 				alt="Sai"
