@@ -4,13 +4,15 @@ import logo from "../Assets/logo.jpeg";
 
 export default function Nav() {
 	return (
-		<div className="w-screen flex justify-between items-center p-5 md:pr-14 md:pl-14 z-50 border-b-1 border-gray-300 sticky top-0 bg-white shadow-sha1">
+		<div className="w-screen flex justify-between items-center p-3 md:pr-14 md:pl-14 z-50 border-b-0 border-gray-300 sticky top-0 bg-lightgray shadow-md">
 			<img
 				src={logo}
 				alt="Sai"
 				style={{
 					maxWidth: "50px",
 					maxHeight: "50px",
+					filter: "invert(100%)",
+					borderRadius: "50%",
 				}}
 			/>
 			<a
