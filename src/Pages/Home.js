@@ -40,6 +40,7 @@ import compvision from "../Assets/compvision.jpg";
 import auction from "../Assets/auction.jpg";
 import { Helmet } from "react-helmet";
 import { useIsIntersect } from "../Utils/useIsIntersect";
+import bggif from "../Assets/bggif.gif";
 
 export default function Home() {
 	const skillsRef = useRef();
@@ -325,13 +326,19 @@ export default function Home() {
 				</div>
 				<div className="flex flex-col gap-5 w-full items-center justify-evenly">
 					<div
-						className="h-[70vh] md:h-[15em] w-full p-10 flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black rounded-lg shadow-xl"
+						className="w-full h-[30em] md:h-[15em] flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black rounded-lg shadow-xl"
+						style={{
+							background: `url(${bggif})`,
+							backgroundPosition: "center",
+							backgroundPositionY: "80%",
+							backgroundSize: "cover",
+						}}
 						id="top"
 					>
-						<div className="flex justify-evenly items-center w-full h-full">
-							<div className="h-full flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[45vw] lg:max-w-[35vw] xl:max-w-[30vw] text-white">
+						<div className="flex justify-between items-center w-full h-full p-5 bg-gradient-to-l from-c1 via-70% to-transparent rounded-md">
+							<div className="flex w-full p-5 flex-col gap-2 max-w-[100vw] items-end justify-end text-white">
 								<p
-									className="text-lg font-bold font-press-start w-full text-left"
+									className="text-lg font-bold font-press-start w-full text-right"
 									id="name"
 								>
 									Uttarkar Sai Nath Rao
@@ -345,12 +352,12 @@ export default function Home() {
 									<a
 										href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
 										target="_blank"
-										className="flex items-center gap-1 text-xs text-left cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-start font-semibold"
+										className="flex items-center gap-1 text-xs text-right cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-end font-semibold"
 									>
 										<FaPaperclip /> My Resume
 									</a>
 								</div>
-								<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
+								<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full p-2">
 									<li>
 										<a
 											href="https://www.github.com/usai729"
@@ -379,24 +386,24 @@ export default function Home() {
 										</a>
 									</li>
 								</ul>
-								<div className="flex md:hidden w-full justify-around mt-7">
+								<div className="flex md:hidden w-full justify-around mt-7 p-2 bg-white rounded-md shadow-md">
 									<a
 										href="#skills"
-										className="text-powderBlue"
+										className="text-c1"
 										onClick={handleScroll}
 									>
 										Skills
 									</a>
 									<a
 										href="#projects"
-										className="text-powderBlue"
+										className="text-c1"
 										onClick={handleScroll}
 									>
 										Projects
 									</a>
 									<a
 										href="#about"
-										className="text-powderBlue"
+										className="text-c1"
 										onClick={handleScroll}
 									>
 										About me
@@ -405,17 +412,19 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="hidden md:flex p-10 md:w-[40em] lg:w-[65em] flex-wrap gap-3 items-center text-gray-400 opacity-75">
-						{tagData.map((tag, index) => (
-							<div
-								key={index}
-								className={`p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1`}
-								style={{ borderColor: `${tag.color}` }}
-							>
-								<tag.icon />
-								<span>{tag.name}</span>
-							</div>
-						))}
+					<div className="flex justify-between items-center w-full">
+						<div className="hidden md:flex pt-10 pb-10 pl-10 md:w-[40em] lg:w-[65em] flex-wrap gap-3 items-center text-gray-400 opacity-75">
+							{tagData.map((tag, index) => (
+								<div
+									key={index}
+									className={`p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1`}
+									style={{ borderColor: `${tag.color}` }}
+								>
+									<tag.icon />
+									<span>{tag.name}</span>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
