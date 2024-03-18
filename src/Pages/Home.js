@@ -336,7 +336,7 @@ export default function Home() {
 						id="top"
 					>
 						<div className="flex justify-between items-center w-full h-full p-5 bg-gradient-to-l from-c1 via-70% to-transparent rounded-md">
-							<div className="flex w-full p-5 flex-col gap-2 max-w-[100vw] items-end justify-end text-white">
+							<div className="flex w-full p-5 flex-col gap-2 max-w-[100vw] items-end justify-end text-white mr-0 md:mr-14">
 								<p
 									className="text-lg font-bold font-press-start w-full text-right"
 									id="name"
@@ -412,12 +412,12 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="flex justify-between items-center w-full">
-						<div className="hidden md:flex pt-10 pb-10 pl-10 md:w-[40em] lg:w-[65em] flex-wrap gap-3 items-center text-gray-400 opacity-75">
+					<div className="flex justify-center items-center w-full">
+						<div className="hidden md:flex md:w-[40em] lg:w-[60em] xl:[75em] flex-wrap gap-3 items-center text-gray-400">
 							{tagData.map((tag, index) => (
 								<div
 									key={index}
-									className={`p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1`}
+									className={`p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1 cursor-pointer opacity-75 hover:scale-105 hover:opacity-100 transition duration-200`}
 									style={{ borderColor: `${tag.color}` }}
 								>
 									<tag.icon />
