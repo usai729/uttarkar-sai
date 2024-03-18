@@ -1,15 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
+	FaBars,
+	FaCode,
 	FaDatabase,
 	FaGithub,
 	FaInstagram,
 	FaLaptopCode,
 	FaLinkedinIn,
 	FaPaperclip,
+	FaUser,
 } from "react-icons/fa";
 import { TbCloudCode } from "react-icons/tb";
 import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 import { MdConnectWithoutContact, MdOpenInNew } from "react-icons/md";
+import { FcSettings } from "react-icons/fc";
 
 import Nav from "../Components/Nav";
 import "../Home.css";
@@ -21,7 +25,6 @@ import auth from "../Assets/auth.png";
 import compvision from "../Assets/compvision.jpg";
 import auction from "../Assets/auction.jpg";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
 import { useIsIntersect } from "../Utils/useIsIntersect";
 
 export default function Home() {
@@ -34,10 +37,14 @@ export default function Home() {
 	const aboutsRef = useRef();
 	const aboutsIntersect = useIsIntersect(aboutsRef);
 
+	const [pos, setPos] = useState("top");
+	const [scrollToTop, setScrollToTop] = useState(false);
+
 	const skills = [
 		{
 			category: "Frontend",
 			list: ["HTML&CSS", "React JS", "Tailwind", "Bootstrap"],
+			projects: ["Online Auction Platform", "Social Media Frontend"],
 		},
 		{
 			category: "Backend",
@@ -49,14 +56,21 @@ export default function Home() {
 				"Firebase",
 				"RESTful APIs",
 			],
+			projects: [
+				"Social Media Backend API",
+				"Online Examination Platform",
+				"Authentication APi",
+			],
 		},
 		{
 			category: "Databases",
 			list: ["MongoDB", "MySQL"],
+			projects: ["Almost every project"],
 		},
 		{
 			category: "Others",
 			list: ["C/C++", "Communication"],
+			projects: ["DSA"],
 		},
 	];
 
@@ -130,6 +144,30 @@ export default function Home() {
 		},
 	];
 
+	const handleScroll = (event) => {
+		event.preventDefault();
+
+		const targetId = event.target.getAttribute("href").slice(1);
+		const targetElement = document.getElementById(targetId);
+
+		setPos(targetId);
+
+		if (targetElement) {
+			window.scrollTo({
+				top: targetElement.offsetTop,
+				behavior: "smooth",
+			});
+		}
+	};
+
+	useEffect(() => {
+		if (pos != "top") {
+			setScrollToTop(true);
+		} else {
+			setScrollToTop(false);
+		}
+	}, [pos]);
+
 	return (
 		<div className="overflow-hidden">
 			<Helmet>
@@ -161,58 +199,155 @@ export default function Home() {
 			</Helmet>
 
 			<Nav />
-			<div className="h-[70vh] p-10 flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black">
-				<div className="flex justify-evenly items-center w-full">
-					<div className="flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[45vw] lg:max-w-[35vw] xl:max-w-[30vw] text-white">
-						<p
-							className="text-lg font-bold font-press-start w-full text-left"
-							id="name"
-						>
-							Uttarkar Sai Nath Rao
-							<span className="cursor">|</span>
-						</p>
-						<p className=" font-poppins w-full text-right">
-							An avid Programmer based in the vibrant city of
-							Hyderabad, India!
-						</p>
-						<div className="w-full">
+			<div className="flex justify-between p-0 md:p-10 gap-10">
+				<div
+					className="h-[70vh] w-[20em] hidden md:flex p-7 justify-center items-center bg-lightgray text-powderBlue font-poppins rounded-lg shadow-xl"
+					id="top"
+				>
+					<div className="flex flex-col justify-around items-start text-md w-full h-full">
+						<div className="flex flex-col justify-evenly h-full">
+							<FaBars />
 							<a
-								href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
-								target="_blank"
-								className="flex items-center gap-1 text-xs text-left cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-start font-semibold"
+								href="#skills"
+								onClick={handleScroll}
+								className="flex gap-2 items-center"
 							>
-								<FaPaperclip /> My Resume
+								<FaCode /> Skills
+							</a>
+							<a
+								href="#projects"
+								onClick={handleScroll}
+								className="flex gap-2 items-center"
+							>
+								<FcSettings />
+								Projects
+							</a>
+							<a
+								href="#about"
+								onClick={handleScroll}
+								className="flex gap-2 items-center"
+							>
+								<FaUser />
+								About me
 							</a>
 						</div>
-						<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
-							<li>
+						<div className="flex flex-col justify-evenly h-full">
+							<p>Social </p>
+							<a
+								href="https://www.github.com/usai729"
+								target="_blank"
+								className="flex gap-2 items-center"
+							>
+								<FaGithub
+									size={20}
+									color="white"
+								/>
+								GitHub
+							</a>
+							<a
+								href="https://www.linkedin.com/in/saiuttarkar"
+								target="_blank"
+								className="flex gap-2 items-center"
+							>
+								<FaLinkedinIn
+									size={20}
+									color="#0077b5"
+								/>
+								LinkedIn
+							</a>
+							<a
+								href="https://www.instagram.com/sai_uttarkar"
+								target="_blank"
+								className="flex gap-2 items-center"
+							>
+								<FaInstagram
+									size={20}
+									color="#833AB4"
+								/>
+								Instagram
+							</a>
+						</div>
+					</div>
+				</div>
+				<div
+					className="h-[70vh] w-full p-10 flex justify-center items-center bg-gradient-to-tr from-gray-900 to-black rounded-lg shadow-xl"
+					id="top"
+				>
+					<div className="flex justify-evenly items-center w-full">
+						<div className="flex items-center justify-center p-5 flex-col gap-2 max-w-[100vw] md:max-w-[45vw] lg:max-w-[35vw] xl:max-w-[30vw] text-white">
+							<p
+								className="text-lg font-bold font-press-start w-full text-left"
+								id="name"
+							>
+								Uttarkar Sai Nath Rao
+								<span className="cursor">|</span>
+							</p>
+							<p className=" font-poppins w-full text-right">
+								An avid Programmer based in the vibrant city of
+								Hyderabad, India!
+							</p>
+							<div className="w-full">
 								<a
-									href="https://www.github.com/usai729"
+									href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
 									target="_blank"
-									className="md:hidden"
+									className="flex items-center gap-1 text-xs text-left cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-start font-semibold"
 								>
-									<FaGithub size={20} />
+									<FaPaperclip /> My Resume
 								</a>
-							</li>
-							<li>
+							</div>
+							<ul className="flex items-center justify-center mt-10 gap-7 list-none w-full">
+								<li>
+									<a
+										href="https://www.github.com/usai729"
+										target="_blank"
+										className="md:hidden"
+									>
+										<FaGithub size={20} />
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.linkedin.com/in/saiuttarkar"
+										target="_blank"
+										className="md:hidden"
+									>
+										<FaLinkedinIn size={20} />
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.instagram.com/sai_uttarkar"
+										target="_blank"
+										className="md:hidden"
+									>
+										<FaInstagram size={20} />
+									</a>
+								</li>
+							</ul>
+							<div className="flex md:hidden w-full justify-around mt-7">
 								<a
-									href="https://www.linkedin.com/in/saiuttarkar"
-									target="_blank"
-									className="md:hidden"
+									href="#skills"
+									className="text-powderBlue"
+									onClick={handleScroll}
 								>
-									<FaLinkedinIn size={20} />
+									Skills
 								</a>
-							</li>
-							<li>
 								<a
-									href="https://www.instagram.com/sai_uttarkar"
-									target="_blank"
-									className="md:hidden"
+									href="#projects"
+									className="text-powderBlue"
+									onClick={handleScroll}
 								>
-									<FaInstagram size={20} />
+									Projects
 								</a>
-							</li>
-						</ul>
+								<a
+									href="#about"
+									className="text-powderBlue"
+									onClick={handleScroll}
+								>
+									About me
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -220,12 +355,13 @@ export default function Home() {
 
 			<div
 				ref={skillsRef}
+				id="skills"
 				className={`mt-5 grid place-items-center transition-opacity duration-700 ease-in ${
 					skillsIntersect ? "opacity-100" : "opacity-0"
 				}`}
 			>
 				<div className="skills mt-5 p-2">
-					<h3 className="text-gray-900 text-xl font-bold mb-5">
+					<h3 className=" text-btnBlue text-xl font-bold mb-5">
 						Skills
 					</h3>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-5 place-items-center">
@@ -234,6 +370,7 @@ export default function Home() {
 								key={index}
 								category={skillCategory.category}
 								skills={skillCategory.list}
+								projects={skillCategory.projects}
 							/>
 						))}
 					</div>
@@ -242,11 +379,12 @@ export default function Home() {
 			<div className={`mt-5 grid place-items-center`}>
 				<div
 					ref={projectsRef}
+					id="projects"
 					className={`skills mt-5 p-2 transition-opacity duration-700 ease-in ${
 						projectsIntersect ? "opacity-100" : "opacity-0"
 					}`}
 				>
-					<h3 className="text-gray-900 text-xl font-bold mb-5">
+					<h3 className="text-btnBlue text-xl font-bold mb-5">
 						Projects
 					</h3>
 					<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 place-items-center">
@@ -269,6 +407,7 @@ export default function Home() {
 			>
 				<div
 					ref={aboutsRef}
+					id="about"
 					className={`flex flex-col md:flex-row gap-2 w-screen md:w-[40vw] p-10 md:p-0 transition-opacity duration-700 ease-in ${
 						aboutsIntersect ? "opacity-100" : "opacity-0"
 					}`}
@@ -325,43 +464,52 @@ export default function Home() {
 	);
 }
 
-const SkillContainer = ({ category, skills }) => (
-	<div className="flex flex-col gap-1 bg-c1 p-3 rounded-md m-2 md:m-0 w-[98vw] md:w-[27vw] lg:w-[17vw] h-[30vh] shadow-md font-poppins">
-		<h4 className="text-md font-semibold text-beech flex items-center gap-1">
-			{category.toLowerCase() === "databases" ? (
-				<FaDatabase />
-			) : category.toLowerCase() === "frontend" ? (
-				<FaLaptopCode />
-			) : category.toLowerCase() === "backend" ? (
-				<TbCloudCode />
-			) : (
-				<GiPerspectiveDiceSixFacesRandom />
-			)}
-			{category}
-		</h4>
-		<div className="flex flex-wrap gap-3 text-phblue text-xs p-2">
-			{skills.map((skill, index) => (
-				<p
-					key={index}
-					className={`text-gray-300 p-1 border-1 shadow-sm ${
-						skill.toLowerCase() === "node.js" ||
-						skill.toLowerCase() === "express.js" ||
-						skill.toLowerCase() === "react js" ||
-						skill.toLowerCase() === "tailwind" ||
-						skill.toLowerCase() === "restful apis"
-							? "border-[#ECA72C] shadow-[#ECA72C]"
-							: "border-[#BA7BA1]"
-					} rounded-md`}
-				>
-					{skill}
-				</p>
-			))}
+const SkillContainer = ({ category, skills, projects }) => (
+	<div className="flex flex-col justify-between gap-1 bg-c1 p-3 rounded-md m-2 md:m-0 w-[98vw] md:w-[27vw] lg:w-[17vw] h-[30vh] shadow-md font-poppins">
+		<div>
+			<h4 className="text-md font-semibold text-beech flex items-center gap-1">
+				{category.toLowerCase() === "databases" ? (
+					<FaDatabase />
+				) : category.toLowerCase() === "frontend" ? (
+					<FaLaptopCode />
+				) : category.toLowerCase() === "backend" ? (
+					<TbCloudCode />
+				) : (
+					<GiPerspectiveDiceSixFacesRandom />
+				)}
+				{category}
+			</h4>
+			<div className="flex flex-wrap gap-3 text-phblue text-xs p-2">
+				{skills.map((skill, index) => (
+					<p
+						key={index}
+						className={`text-gray-300 p-1 border-1 shadow-none ${
+							skill.toLowerCase() === "node.js" ||
+							skill.toLowerCase() === "express.js" ||
+							skill.toLowerCase() === "react js" ||
+							skill.toLowerCase() === "tailwind" ||
+							skill.toLowerCase() === "restful apis"
+								? "border-[#ECA72C] shadow-[#ECA72C]"
+								: "border-[#BA7BA1]"
+						} rounded-md`}
+					>
+						{skill}
+					</p>
+				))}
+			</div>
+		</div>
+		<div className="flex flex-col gap-1 text-powderBlue">
+			<ul className="list-disc text-xs pl-4">
+				{projects?.map((project, index) => {
+					return <li key={index}>{project}</li>;
+				})}
+			</ul>
 		</div>
 	</div>
 );
 
 const Project = ({ title, link, points, image }) => (
-	<div className="flex flex-col justify-between gap-1 rounded-md w-[98vw] md:w-[27vw] xl:w-[17vw] min-h-[40vh] md:min-h-[55vh] font-poppins border-1 border-gray-200 overflow-hidden bg-white">
+	<div className="flex flex-col justify-between gap-1 rounded-md w-[98vw] md:w-[27vw] xl:w-[17vw] min-h-[40vh] md:min-h-[55vh] font-poppins border-1 border-lightgray overflow-hidden text-beech bg-c1">
 		<div>
 			<img
 				src={image}
@@ -381,7 +529,7 @@ const Project = ({ title, link, points, image }) => (
 			<a
 				href={link}
 				target="_blank"
-				className="flex items-center gap-1 m-3 text-xs text-blue-500"
+				className="flex items-center gap-1 m-3 text-xs text-btnBlue"
 			>
 				<MdOpenInNew /> View Code
 			</a>

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from "../Assets/logo.jpeg";
+import { MdConnectWithoutContact } from "react-icons/md";
 
 export default function Nav() {
 	return (
@@ -13,7 +14,18 @@ export default function Nav() {
 					maxHeight: "50px",
 				}}
 			/>
-			<ul className="hidden items-center gap-7 list-none md:flex">
+			<a
+				href="https://www.linkedin.com/in/saiuttarkar"
+				target="_blank"
+				className="flex items-center justify-center p-3 bg-c1 rounded-md gap-2 text-beech md:w-max opacity-95"
+			>
+				<FaLinkedinIn
+					size={25}
+					color="#0077b5"
+				/>
+				Connect on LinkedIn
+			</a>
+			{/* <ul className="hidden items-center gap-7 list-none md:flex">
 				<li>
 					<a
 						href="https://www.github.com/usai729"
@@ -38,7 +50,7 @@ export default function Nav() {
 						<FaInstagram size={25} />
 					</a>
 				</li>
-			</ul>
+			</ul> */}
 		</div>
 	);
 }
