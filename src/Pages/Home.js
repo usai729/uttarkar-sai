@@ -413,7 +413,7 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="flex justify-center items-center w-full">
-						<div className="hidden md:flex md:w-[40em] lg:w-[60em] xl:[75em] flex-wrap gap-3 items-center text-gray-400">
+						<div className="hidden md:flex md:w-[40em] lg:w-[60em] xl:[80em] flex-wrap gap-3 items-center text-gray-400">
 							{tagData.map((tag, index) => (
 								<div
 									key={index}
