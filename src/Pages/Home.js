@@ -41,6 +41,7 @@ import auction from "../Assets/auction.jpg";
 import { Helmet } from "react-helmet";
 import { useIsIntersect } from "../Utils/useIsIntersect";
 import bggif from "../Assets/bggif.gif";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function Home() {
 	const skillsRef = useRef();
@@ -135,7 +136,9 @@ export default function Home() {
 		{
 			title: "Car Speed Detection",
 			image: compvision,
-			points: [],
+			points: [
+				"OpenCV project that uses a video input to calculate a car's speed on highway",
+			],
 			link: "https://github.com/usai729/Car-Speed-Detection-OpenCV-Python",
 		},
 		{
@@ -214,6 +217,16 @@ export default function Home() {
 			});
 		}
 	};
+
+	window.addEventListener("scroll", () => {
+		var y = window.scrollY;
+
+		if (y >= 620) {
+			setScrollToTop(true);
+		} else {
+			setScrollToTop(false);
+		}
+	});
 
 	useEffect(() => {
 		if (pos != "top") {
@@ -364,7 +377,7 @@ export default function Home() {
 											target="_blank"
 											className="md:hidden"
 										>
-											<FaGithub size={20} />
+											<FaGithub size={25} />
 										</a>
 									</li>
 									<li>
@@ -373,7 +386,7 @@ export default function Home() {
 											target="_blank"
 											className="md:hidden"
 										>
-											<FaLinkedinIn size={20} />
+											<FaLinkedinIn size={25} />
 										</a>
 									</li>
 									<li>
@@ -382,7 +395,7 @@ export default function Home() {
 											target="_blank"
 											className="md:hidden"
 										>
-											<FaInstagram size={20} />
+											<FaInstagram size={25} />
 										</a>
 									</li>
 								</ul>
@@ -537,6 +550,15 @@ export default function Home() {
 					</a>
 				</div>
 			</div>
+			{scrollToTop && (
+				<a
+					href="#top"
+					onClick={handleScroll}
+					className="p-3 rounded-full bg-white shadow-md fixed bottom-5 right-5"
+				>
+					<FaArrowUp />
+				</a>
+			)}
 		</div>
 	);
 }
@@ -556,7 +578,7 @@ const SkillContainer = ({ category, skills, projects }) => (
 				)}
 				{category}
 			</h4>
-			<div className="flex flex-wrap gap-3 text-phblue text-xs p-2">
+			<div className="flex flex-wrap gap-3 text-phblue text-md md:text-xs p-2">
 				{skills.map((skill, index) => (
 					<p
 						key={index}
@@ -576,7 +598,7 @@ const SkillContainer = ({ category, skills, projects }) => (
 			</div>
 		</div>
 		<div className="flex flex-col gap-1 text-powderBlue">
-			<ul className="list-disc text-xs pl-4">
+			<ul className="list-disc text-sm md:text-xs pl-4">
 				{projects?.map((project, index) => {
 					return <li key={index}>{project}</li>;
 				})}
