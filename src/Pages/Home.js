@@ -42,6 +42,7 @@ import { Helmet } from "react-helmet";
 import { useIsIntersect } from "../Utils/useIsIntersect";
 import bggif from "../Assets/bggif.gif";
 import { FaArrowUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 	const skillsRef = useRef();
@@ -549,6 +550,12 @@ export default function Home() {
 						</span>
 					</a>
 				</div>
+				<Link
+					to={"/home/old"}
+					className="font-old-std text-link90s text-lg"
+				>
+					Visit old theme site
+				</Link>
 			</div>
 			{scrollToTop && (
 				<a

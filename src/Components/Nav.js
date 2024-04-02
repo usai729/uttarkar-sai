@@ -1,5 +1,7 @@
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import logo from "../Assets/logo.jpeg";
 
 export default function Nav() {
@@ -15,17 +17,19 @@ export default function Nav() {
 					borderRadius: "50%",
 				}}
 			/>
-			<a
-				href="https://www.linkedin.com/in/saiuttarkar"
-				target="_blank"
-				className="flex items-center justify-center p-3 bg-c1 rounded-md gap-2 text-beech md:w-max opacity-95"
-			>
-				<FaLinkedinIn
-					size={25}
-					color="#0077b5"
-				/>
-				Connect on LinkedIn
-			</a>
+			<div className="flex gap-2 items-center">
+				<a
+					href="https://www.linkedin.com/in/saiuttarkar"
+					target="_blank"
+					className="flex items-center justify-center p-3 bg-c1 rounded-md gap-2 text-beech md:w-max opacity-95"
+				>
+					<FaLinkedinIn
+						size={25}
+						color="#0077b5"
+					/>
+					Connect on LinkedIn
+				</a>
+			</div>
 			{/* <ul className="hidden items-center gap-7 list-none md:flex">
 				<li>
 					<a

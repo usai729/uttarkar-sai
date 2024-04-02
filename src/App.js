@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import { Helmet } from "react-helmet";
+import OldHome from "./Pages/OldHome";
 
 function App() {
 	const Page404 = () => {
@@ -33,6 +34,14 @@ function App() {
 				<Route
 					path="/"
 					element={<Home />}
+				/>
+				<Route
+					path="/home"
+					element={<Home />}
+				/>
+				<Route
+					path="/home/old"
+					element={<Page404 />}
 				/>
 
 				<Route

@@ -12,6 +12,7 @@ module.exports = {
 				"press-start": '"Press Start 2P", system-ui',
 				poppins: '"Poppins", sans-serif',
 				roboto: '"Roboto", sans-serif',
+				"old-std": '"Old Standard TT", serif',
 			},
 			colors: {
 				c1: "#14131A",
@@ -21,6 +22,10 @@ module.exports = {
 				lightgray: "#1F1F1F",
 				btnBlue: "#BB87FD",
 				powderBlue: "#99B2DD",
+				link90s: "#90DCFF",
+				text90s: "#49297e",
+				text90sheader: "#ec833f",
+				btnbg90s: "#008b8b",
 			},
 			boxShadow: {
 				sha1: "rgba(255, 255, 255, 0.2) 0px 3px 8px",
