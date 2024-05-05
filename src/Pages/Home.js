@@ -360,11 +360,19 @@ export default function Home() {
 								</p>
 								<p className=" font-poppins w-full text-right">
 									An avid Programmer based in the vibrant city
-									of Hyderabad, India!
+									of Hyderabad, India! <br /> Intern @
+									<a
+										href="https://www.banao.tech/"
+										style={{
+											textDecoration: "underline",
+										}}
+									>
+										Banao Technologies
+									</a>
 								</p>
 								<div className="w-full">
 									<a
-										href="https://drive.google.com/file/d/1W5gaquH5qOsMsRKn6Yh5VJEJ6pFbsy89/view?usp=drive_link"
+										href="https://drive.google.com/file/d/1nfApEVoL0JxU9yqh4aRXT9cjY3ucUU8x/view?usp=sharing"
 										target="_blank"
 										className="flex items-center gap-1 text-xs text-right cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-end font-semibold"
 									>
