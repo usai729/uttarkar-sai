@@ -372,7 +372,7 @@ export default function Home() {
 								</p>
 								<div className="w-full">
 									<a
-										href="https://drive.google.com/file/d/1nfApEVoL0JxU9yqh4aRXT9cjY3ucUU8x/view?usp=sharing"
+										href="https://docs.google.com/document/d/1GrIYECVZ4W8o70J7cuWYsTIf5Q__jhIH/edit?usp=sharing&ouid=100185971096070697966&rtpof=true&sd=true"
 										target="_blank"
 										className="flex items-center gap-1 text-xs text-right cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-end font-semibold"
 									>
