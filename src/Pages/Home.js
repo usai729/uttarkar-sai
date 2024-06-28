@@ -589,7 +589,7 @@ export default function Home() {
 }
 
 const SkillContainer = ({ category, skills, projects }) => (
-	<div className="flex flex-col justify-between gap-1 bg-c1 p-3 rounded-md m-2 md:m-0 w-[98vw] md:w-[27vw] lg:w-[17vw] h-[30vh] shadow-md font-poppins">
+	<div className="flex flex-col justify-between gap-1 bg-c1 p-3 rounded-md m-2 md:m-0 w-[98vw] md:w-[27vw] lg:w-[17vw] h-[35vh] shadow-md font-poppins">
 		<div>
 			<h4 className="text-md font-semibold text-beech flex items-center gap-1">
 				{category.toLowerCase() === "databases" ? (
