@@ -86,7 +86,7 @@ export default function Home() {
 		},
 		{
 			category: "Others",
-			list: ["C/C++", "Communication"],
+			list: ["C/C++", "Communication", "Presentation", "Problem-Solving", "Client Engagement", "Attention to Detail", "Solution Design", "Stakeholder Communication"],
 			projects: ["DSA"],
 		},
 	];
