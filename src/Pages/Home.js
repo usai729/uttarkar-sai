@@ -103,6 +103,16 @@ export default function Home() {
 			link: "https://github.com/usai729/usai729-File_Sharing_And_Student_Management---PHP",
 		},
 		{
+			title: "PinFluence",
+			image: null,
+			points: [
+				"Captivating User Interface (UI)",
+				"Robust Authentication",
+				"Simplistc Design",
+			],
+			link: "https://github.com/usai729/pinfluence",
+		},
+		{
 			title: "Social Media Backend API",
 			image: api,
 			points: [
