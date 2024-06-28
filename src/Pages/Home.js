@@ -31,6 +31,7 @@ import {
 
 import Nav from "../Components/Nav";
 import "../Home.css";
+import pinfluence from "../Assets/search.png"
 import socialmedia from "../Assets/socialmedia.webp";
 import exam from "../Assets/onlinexam.png";
 import fileshare from "../Assets/fileshare.png";
@@ -86,8 +87,8 @@ export default function Home() {
 		},
 		{
 			category: "Others",
-			list: ["C/C++", "Communication", "Presentation", "Problem-Solving", "Client Engagement", "Attention to Detail", "Solution Design", "Stakeholder Communication"],
-			projects: ["DSA"],
+			list: ["Communication", "Problem-Solving", "Attention to Detail", "Solution Design", "Stakeholder Communication"],
+			projects: ["File Sharing System", "Online Examination System", "Others"],
 		},
 	];
 
@@ -104,7 +105,7 @@ export default function Home() {
 		},
 		{
 			title: "PinFluence",
-			image: null,
+			image: pinfluence,
 			points: [
 				"Captivating User Interface (UI)",
 				"Robust Authentication",
@@ -603,7 +604,7 @@ const SkillContainer = ({ category, skills, projects }) => (
 				)}
 				{category}
 			</h4>
-			<div className="flex flex-wrap gap-3 text-phblue text-md md:text-xs p-2">
+			<div className="flex flex-wrap gap-3 text-phblue text-md md:text-[0.7em] p-2">
 				{skills.map((skill, index) => (
 					<p
 						key={index}
