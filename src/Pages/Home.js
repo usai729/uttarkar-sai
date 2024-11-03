@@ -369,21 +369,9 @@ export default function Home() {
 									Uttarkar Sai Nath Rao
 									<span className="cursor">|</span>
 								</p>
-								<p className=" font-poppins w-full text-right">
-									An avid Programmer based in the vibrant city
-									of Hyderabad, India! <br /> Intern @
-									<a
-										href="https://www.banao.tech/"
-										style={{
-											textDecoration: "underline",
-										}}
-									>
-										Banao Technologies
-									</a>
-								</p>
 								<div className="w-full">
 									<a
-										href="https://drive.google.com/file/d/1N7xCl2bGjmZMTnO2RyxKvspRzUUyL_-w/view?usp=sharing"
+										href="https://drive.google.com/file/d/1Z0L2Zb17qFE6dyEP8cJ9rkzwG9InI6za/view?usp=sharing"
 										target="_blank"
 										className="flex items-center gap-1 text-xs text-right cursor-pointer bg-gradient-to-tr from-purple-700 to-blue-400 p-3 rounded-md float-end font-semibold"
 									>
