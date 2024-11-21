@@ -533,14 +533,7 @@ export default function Home() {
 							About me...
 						</p>
 						<p className="text-md leading-6 font-roboto text-beech">
-							Full-stack developer with a product vision, weaving
-							user experiences with MERN magic. Mastering the web
-							(HTML, CSS, JS, React, PHP) while exploring
-							marketing strategies to fuel engagement. Keen eye
-							for detail, analytical mind, and collaborative
-							spirit bridge the gap between tech and business.
-							Seeking opportunities to build impactful products
-							and collaborate with awesome teams!
+						I am a Technical Consultant and Full-Stack Developer with expertise in MERN stack, API development, and database management. I specialize in delivering tailored software solutions that solve business challenges, improve efficiency, and scale seamlessly. With strong skills in Node.js, React.js, and Python, I bridge the gap between technology and business needs. Passionate about creating intuitive, user-focused products, I thrive in collaborative environments and always seek innovative ways to solve complex problems. I am committed to building impactful solutions that drive growth and enhance user experience.
 						</p>
 					</div>
 					<div
@@ -552,13 +545,14 @@ export default function Home() {
 					></div>
 				</div>
 				<div className="flex flex-col w-full md:flex-row justify-center items-center gap-2">
-					<button
-						className="flex items-center justify-center p-4 bg-c1 rounded-md gap-2 text-beech cursor-not-allowed w-full md:w-max opacity-50"
-						disabled
+					<a
+						className="flex items-center justify-center p-4 bg-c1 rounded-md gap-2 w-full md:w-max text-cyan-300"
+						href="https://www.linkedin.com/in/saiuttarkar"
+						target="_blank"
 					>
 						<MdConnectWithoutContact size={25} />
 						Connect With Me
-					</button>
+					</a>
 					<a
 						href="https://github.com/usai729/uttarkar-sai"
 						target="_blank"
@@ -575,12 +569,12 @@ export default function Home() {
 						</span>
 					</a>
 				</div>
-				<Link
+				{/* <Link
 					to={"/home/old"}
 					className="font-old-std text-link90s text-lg"
 				>
 					Visit old theme site
-				</Link>
+				</Link> */}
 			</div>
 			{scrollToTop && (
 				<a
