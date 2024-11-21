@@ -252,6 +252,15 @@ export default function Home() {
 		<div className="overflow-hidden">
 			<Helmet>
 				<title>Uttarkar Sai Nath Rao</title>
+				<p className="flex items-center justify-center">
+					<span>Technical Consultant at</span>
+					<img 
+						src="https://www.apty.io/wp-content/uploads/2024/06/logo.svg" 
+						alt="Apty Logo" 
+						width="50px" 
+						className="ml-2" 
+					/>
+				</p>
 				<meta
 					name="description"
 					content="Full-stack developer with a product vision, weaving user experiences with MERN magic. Mastering the web (HTML, CSS, JS, React, PHP) while exploring marketing strategies to fuel engagement. Keen eye for detail, analytical mind, and collaborative spirit bridge the gap between tech and business. Seeking opportunities to build impactful products and collaborate with awesome teams!"
@@ -368,6 +377,15 @@ export default function Home() {
 								>
 									Uttarkar Sai Nath Rao
 									<span className="cursor">|</span>
+								</p>
+								<p className="flex items-center justify-center">
+									<span>Technical Consultant at</span>
+									<img 
+										src="https://www.apty.io/wp-content/uploads/2024/06/logo.svg" 
+										alt="Apty Logo" 
+										width="50px" 
+										className="ml-2" 
+									/>
 								</p>
 								<div className="w-full">
 									<a
@@ -578,77 +596,78 @@ export default function Home() {
 }
 
 const SkillContainer = ({ category, skills, projects }) => (
-	<div className="flex flex-col justify-between gap-1 bg-c1 p-3 rounded-md m-2 md:m-0 w-[98vw] md:w-[27vw] lg:w-[17vw] h-[35vh] shadow-md font-poppins">
-		<div>
-			<h4 className="text-md font-semibold text-beech flex items-center gap-1">
-				{category.toLowerCase() === "databases" ? (
-					<FaDatabase />
-				) : category.toLowerCase() === "frontend" ? (
-					<FaLaptopCode />
-				) : category.toLowerCase() === "backend" ? (
-					<TbCloudCode />
-				) : (
-					<GiPerspectiveDiceSixFacesRandom />
-				)}
-				{category}
-			</h4>
-			<div className="flex flex-wrap gap-3 text-phblue text-md md:text-[0.7em] p-2">
-				{skills.map((skill, index) => (
-					<p
-						key={index}
-						className={`text-gray-300 p-1 border-1 shadow-none ${
-							skill.toLowerCase() === "node.js" ||
-							skill.toLowerCase() === "express.js" ||
-							skill.toLowerCase() === "react js" ||
-							skill.toLowerCase() === "tailwind" ||
-							skill.toLowerCase() === "restful apis"
-								? "border-[#ECA72C] shadow-[#ECA72C]"
-								: "border-[#BA7BA1]"
-						} rounded-md`}
-					>
-						{skill}
-					</p>
-				))}
-			</div>
-		</div>
-		<div className="flex flex-col gap-1 text-powderBlue">
-			<ul className="list-disc text-sm md:text-xs pl-4">
-				{projects?.map((project, index) => {
-					return <li key={index}>{project}</li>;
-				})}
-			</ul>
-		</div>
-	</div>
-);
-
-const Project = ({ title, link, points, image }) => (
-	<div className="flex flex-col justify-between gap-1 rounded-md w-[98vw] md:w-[27vw] xl:w-[17vw] min-h-[40vh] md:min-h-[55vh] font-poppins border-1 border-lightgray overflow-hidden text-beech bg-c1">
-		<div>
-			<img
-				src={image}
-				alt=""
-				className="rounded-t-md h-[20vh] w-full object-cover object-center"
-			/>
-			<div className="flex flex-col justify-center p-2 gap-2">
-				<p className="text-md font-semibold">{title}</p>
-				<ol className="list-disc text-sm font-sans pl-4">
-					{points?.map((point, index) => (
-						<li key={index}>{point}</li>
-					))}
-				</ol>
-			</div>
-		</div>
-		{link && (
-			<a
-				href={link}
-				target="_blank"
-				className="flex items-center gap-1 m-3 text-xs text-btnBlue"
+	<div className="flex flex-col justify-between gap-1 bg-c1 p-3 rounded-md m-2 md:m-0 w-[98vw] md:w-[27vw] lg:w-[17vw] h-[35vh] shadow-md font-poppins max-h-[35vh] overflow-y-auto">
+	  <div>
+		<h4 className="text-md font-semibold text-beech flex items-center gap-1">
+		  {category.toLowerCase() === "databases" ? (
+			<FaDatabase />
+		  ) : category.toLowerCase() === "frontend" ? (
+			<FaLaptopCode />
+		  ) : category.toLowerCase() === "backend" ? (
+			<TbCloudCode />
+		  ) : (
+			<GiPerspectiveDiceSixFacesRandom />
+		  )}
+		  {category}
+		</h4>
+		<div className="flex flex-wrap gap-3 text-phblue text-md md:text-[0.7em] p-2">
+		  {skills.map((skill, index) => (
+			<p
+			  key={index}
+			  className={`text-gray-300 p-1 border-1 shadow-none ${
+				skill.toLowerCase() === "node.js" ||
+				skill.toLowerCase() === "express.js" ||
+				skill.toLowerCase() === "react js" ||
+				skill.toLowerCase() === "tailwind" ||
+				skill.toLowerCase() === "restful apis"
+				  ? "border-[#ECA72C] shadow-[#ECA72C]"
+				  : "border-[#BA7BA1]"
+			  } rounded-md`}
 			>
-				<MdOpenInNew /> View Code
-			</a>
-		)}
+			  {skill}
+			</p>
+		  ))}
+		</div>
+	  </div>
+	  <div className="flex flex-col gap-1 text-powderBlue">
+		<ul className="list-disc text-sm md:text-xs pl-4">
+		  {projects?.map((project, index) => {
+			return <li key={index}>{project}</li>;
+		  })}
+		</ul>
+	  </div>
 	</div>
-);
+  );
+  
+  const Project = ({ title, link, points, image }) => (
+	<div className="flex flex-col justify-between gap-1 rounded-md w-[98vw] md:w-[27vw] xl:w-[17vw] min-h-[40vh] md:min-h-[55vh] font-poppins border-1 border-lightgray overflow-hidden text-beech bg-c1 max-h-[55vh] overflow-y-auto">
+	  <div>
+		<img
+		  src={image}
+		  alt=""
+		  className="rounded-t-md h-[20vh] w-full object-cover object-center"
+		/>
+		<div className="flex flex-col justify-center p-2 gap-2">
+		  <p className="text-md font-semibold">{title}</p>
+		  <ol className="list-disc text-sm font-sans pl-4">
+			{points?.map((point, index) => (
+			  <li key={index}>{point}</li>
+			))}
+		  </ol>
+		</div>
+	  </div>
+	  {link && (
+		<a
+		  href={link}
+		  target="_blank"
+		  className="flex items-center gap-1 m-3 text-xs text-btnBlue"
+		>
+		  <MdOpenInNew /> View Code
+		</a>
+	  )}
+	</div>
+  );
+  
 
 const Line = () => {
 	return (
