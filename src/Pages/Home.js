@@ -248,6 +248,20 @@ export default function Home() {
 		}
 	}, [pos]);
 
+	window.addEventListener("keydown", (event) => {
+		event.preventDefault();
+		
+		if (/^[a-zA-Z]$/.test(event.key)) {
+			let tag = document.getElementById(`tag-${Math.floor(Math.random() * 29)}`);
+
+			tag.className = "p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1 cursor-pointer scale-105 opacity-100 transition duration-200 hover:scale-105 hover:opacity-100";
+			
+			setTimeout(() => {
+				tag.className = "p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1 cursor-pointer opacity-75 transition duration-200 hover:scale-105 hover:opacity-100";
+			}, 300);
+		}
+	});
+
 	return (
 		<div className="overflow-hidden">
 			<Helmet>
@@ -456,6 +470,7 @@ export default function Home() {
 							{tagData.map((tag, index) => (
 								<div
 									key={index}
+									id={`tag-${index}`}
 									className={`p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1 cursor-pointer opacity-75 hover:scale-105 hover:opacity-100 transition duration-200`}
 									style={{ borderColor: `${tag.color}` }}
 								>
