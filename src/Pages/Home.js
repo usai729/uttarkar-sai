@@ -250,8 +250,11 @@ export default function Home() {
 
 	window.addEventListener("keydown", (event) => {
 		event.preventDefault();
+
+		console.log(event.key);
 		
-		if (/^[a-zA-Z]$/.test(event.key)) {
+		if (event.key == "ArrowLeft" || event.key == "ArrowRight" || event.key == "ArrowUp" || event.key == "ArrowDown" ||
+			['w', 'a', 's', 'd'].includes(event.key.toLowerCase())) {
 			let tag = document.getElementById(`tag-${Math.floor(Math.random() * 29)}`);
 
 			tag.className = "p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1 cursor-pointer scale-105 opacity-100 transition duration-200 hover:scale-105 hover:opacity-100";
@@ -259,7 +262,11 @@ export default function Home() {
 			setTimeout(() => {
 				tag.className = "p-2 rounded-md border-1 border-${tag.color}-300 text-xs flex items-center gap-1 cursor-pointer opacity-75 transition duration-200 hover:scale-105 hover:opacity-100";
 			}, 300);
+		} else {
+			return
 		}
+
+		// /^[a-zA-Z]$/.test(event.key)
 	});
 
 	return (
