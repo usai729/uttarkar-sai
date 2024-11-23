@@ -31,7 +31,7 @@ import {
 
 import Nav from "../Components/Nav";
 import "../Home.css";
-import pinfluence from "../Assets/search.png"
+import pinfluence from "../Assets/search.png";
 import socialmedia from "../Assets/socialmedia.webp";
 import exam from "../Assets/onlinexam.png";
 import fileshare from "../Assets/fileshare.png";
@@ -87,8 +87,18 @@ export default function Home() {
 		},
 		{
 			category: "Others",
-			list: ["Communication", "Problem-Solving", "Attention to Detail", "Solution Design", "Stakeholder Communication"],
-			projects: ["File Sharing System", "Online Examination System", "Others"],
+			list: [
+				"Communication",
+				"Problem-Solving",
+				"Attention to Detail",
+				"Solution Design",
+				"Stakeholder Communication",
+			],
+			projects: [
+				"File Sharing System",
+				"Online Examination System",
+				"Others",
+			],
 		},
 	];
 
@@ -472,7 +482,11 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="flex justify-center items-center w-full">
+					<div className="flex flex-col justify-center items-center w-full">
+						<p className="hidden md:flex mb-4 text-left text-white">
+							Try WASD/Arrow keys
+						</p>{" "}
+						{/* Add margin-bottom to create space between text and tags */}
 						<div className="hidden md:flex md:w-[40em] lg:w-[60em] xl:[80em] flex-wrap gap-3 items-center text-gray-400">
 							{tagData.map((tag, index) => (
 								<div
